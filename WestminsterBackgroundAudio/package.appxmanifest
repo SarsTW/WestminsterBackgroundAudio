@@ -14,12 +14,22 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" StartPage="default.html">
+    <Application Id="App" StartPage="https://sarstw.github.io/WestminsterBackgroundAudio/index.html">
       <uap:VisualElements DisplayName="WestminsterBackgroundAudio" Description="WestminsterBackgroundAudio" BackgroundColor="transparent" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="images\splashscreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="WestminsterBackgroundAudio.App">
+          <BackgroundTasks>
+            <Task Type="audio" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="https://sarstw.github.io/WestminsterBackgroundAudio/index.html" Type="include" WindowsRuntimeAccess="all" />
+      </uap:ApplicationContentUriRules>
     </Application>
   </Applications>
   <Capabilities>
